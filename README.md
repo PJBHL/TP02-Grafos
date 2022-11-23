@@ -1,18 +1,16 @@
-## Getting Started
+## Trabalho Prático 02 - Teória dos Grafos e Computabilidade.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Dado um grafo direcionado e simples, um caminho simples é um caminho sem vértices repetidos. Caminhos disjuntos de arestas representam caminhos que não tem nenhuma aresta em comum, mas com a mesma origem e destino.
 
-## Folder Structure
+O trabalho envolve determinar:
+ - O número máximo de caminho disjuntos de arestas.
+ - Listar cada um dos dos caminhos disjuntos encontrados.
+ 
+ A implementação foi feita em Java, o grafo é representado por uma lista de adjacência e os grafos usados no trabalho são retirados de arquivos de texto que seguem o seguinte padrão:
 
-The workspace contains two folders by default, where:
+### grafo.txt
+| Número de Vértices do Grafo | Número de Arestas do Grafo |
+| :---:   | :---: |
+| Vértice v | Vértice w |
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+A primeira coluna representa o vértice cujo terá uma aresta direcionada ligada ao vértice da segunda coluna, isto é v -> w.
