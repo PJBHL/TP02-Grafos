@@ -1,4 +1,4 @@
-package Utils;
+package Components;
 import java.util.*;
 
 public class Grafo {
@@ -11,7 +11,7 @@ public class Grafo {
         for(Aresta i : arestas)
             adjList.get(i.origem).add(i.destino);
 
-        // para grafos não-direcionados.
+        // Para grafos não-direcionados:
         // for(Aresta i : arestas)
         //     adjList.get(i.destino).add(i.origem);
     }

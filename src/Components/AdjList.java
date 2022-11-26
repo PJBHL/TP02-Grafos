@@ -1,4 +1,4 @@
-package Utils;
+package Components;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,13 +19,13 @@ public class AdjList {
         }
     }
 
-    public int[] conjuntoSucessores(Grafo grafo, int vertex) {
+    public static int[] conjuntoSucessores(Grafo grafo, int vertex) {
         int[] sucessores = grafo.adjList.get(vertex).stream().mapToInt(i->i).toArray();
 
         return sucessores;
     }
 
-    public int[] conjuntoPredecessores(Grafo grafo, int vertex) {
+    public static int[] conjuntoPredecessores(Grafo grafo, int vertex) {
         int n = grafo.getSize();
         List<Integer> tempList = new ArrayList<Integer>();
 

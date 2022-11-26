@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
-
-import Utils.*;
+import Components.*;
+import Methods.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -14,5 +14,8 @@ public class Main {
         grafo = ReadGraph.readGraph(fileName);
         AdjList.ordenarSucessores(grafo);
         AdjList.printList(grafo);
+        if(BFS.buscaEmLargura(grafo, 2, 5)) {
+            System.out.println("Há caminho entre: 2 e 5");
+        }
     }
 }
