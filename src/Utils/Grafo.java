@@ -11,8 +11,9 @@ public class Grafo {
         for(Aresta i : arestas)
             adjList.get(i.origem).add(i.destino);
 
-        for(Aresta i : arestas)
-            adjList.get(i.destino).add(i.origem);
+        // para grafos não-direcionados.
+        // for(Aresta i : arestas)
+        //     adjList.get(i.destino).add(i.origem);
     }
 
     public int getSize() {
