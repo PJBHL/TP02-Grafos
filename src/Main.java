@@ -14,8 +14,8 @@ public class Main {
         grafo = ReadGraph.readGraph(fileName);
         AdjList.ordenarSucessores(grafo);
         AdjList.printList(grafo);
-        if(BFS.buscaEmLargura(grafo, 2, 5)) {
-            System.out.println("Há caminho entre: 2 e 5");
-        }
+        String origem = read.readLine();
+        String destino = read.readLine();
+        System.out.println("O número máximo de caminhos disjuntos é: " + DisjointPaths.findDisjointPath(grafo, Integer.parseInt(origem), Integer.parseInt(destino)));
     }
 }

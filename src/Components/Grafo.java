@@ -19,4 +19,12 @@ public class Grafo {
     public int getSize() {
         return adjList.size();
     }
+
+    public void reverseEdges(int v, int w) {
+        // removendo arestas.
+        int remove_VW = adjList.get(v).indexOf(w);
+        adjList.get(v).remove(remove_VW);
+        // adicionando em ordem inversa.
+        adjList.get(w).add(v);
+    }
 }

@@ -34,7 +34,6 @@ public class BFS {
 
         while(!fila.isEmpty()) {
             int v = fila.peek();
-            System.out.println(v + " ");
             fila.remove();
             int[] vizinhanca = AdjList.conjuntoSucessores(grafo, v);
             for(int w : vizinhanca) {
