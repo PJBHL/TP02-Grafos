@@ -3,9 +3,10 @@ import java.util.*;
 import Components.*;
 
 /**
- * Classe para a execução de uma busca em largura, usada em outros métodos.
+ * Classe para a execução de uma busca em largura no grafo, usada para a procura de caminhos disjuntos.
  */
 public class BFS {
+    // Variáveis para controle da busca em largura.
     static Queue<Integer> fila = new LinkedList<>();
     static int time;
     static boolean[] visited;
@@ -14,18 +15,25 @@ public class BFS {
     static int graphSize;
 
     /**
-     * Metodo para inicializar os valores para uma busca em largura.
+     * Metodo para inicializar os valores de controle da busca em largura.
      * @param grafo - que será realizado a busca.
      */
     static void inicializarValores(Grafo grafo) {
         graphSize = grafo.getSize();
         time = 0;
-        // Preenche todos os vetores com 0.
+        // Preenche todos os vetores com 0, do tamanho do grafo.
         visited = new boolean[graphSize];
         indice = new int[graphSize];
         pai = new int[graphSize];
     }
 
+    /**
+     * 
+     * @param grafo
+     * @param source
+     * @param dest
+     * @return
+     */
     public static boolean buscaEmLargura(Grafo grafo, int source, int dest) {
         inicializarValores(grafo);
 
