@@ -28,29 +28,33 @@ public class BFS {
     }
 
     /**
-     * 
-     * @param grafo
-     * @param source
-     * @param dest
-     * @return
+     * Busca em largura modificada que testa se há caminho entre um vértice "source" e outro vértice "dest"
+     * @param grafo - Grafo que será realizado a busca em largura.
+     * @param source - Vértice de origem da busca.
+     * @param dest - Vértice de destino da busca.
+     * @return - true se há um caminho entre origem e destino, falso caso contrário.
      */
     public static boolean buscaEmLargura(Grafo grafo, int source, int dest) {
         inicializarValores(grafo);
 
+        // Adiciona na fila o vértice explorado e marca o seu vetor.
         fila.add(source);
         visited[source] = true;
 
+        // Enquanto a fila não está vazia há vértices para serem explorados.
         while(!fila.isEmpty()) {
+            // Pega o primeiro elemento da fila.
             int v = fila.peek();
             fila.remove();
             int[] vizinhanca = AdjList.conjuntoSucessores(grafo, v);
+            // Analiza os vizinhos de v e faz atribuições caso algum deles ainda não tenha sido visitado.
             for(int w : vizinhanca) {
                 if(!visited[w]) {
-                    visited[w] = true;
-                    pai[w] = v;
+                    visited[w] = true; // W é visitado pela primeira vez.
+                    pai[w] = v; // V é o pai de W na árvore de busca.
                     time = time + 1;
                     indice[w] = time;
-                    fila.add(w);
+                    fila.add(w); // Adiciona W na fila para continuar a busca enquanto a fila não estiver vazia.
                 }
             }
         }
