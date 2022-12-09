@@ -1,5 +1,6 @@
 package Components;
 import java.util.*;
+import java.io.*;
 
 /**
  * Classe construtora de um grafo.
@@ -49,5 +50,33 @@ public class Grafo {
         adjList.get(v).remove(remove_VW);
         // adição do vértice v na lista de w.
         adjList.get(w).add(v);
+    }
+
+    public static int getEdgesListSize(Grafo grafo) {
+        int sizeT = 0;
+
+        for(int vertex = 1; vertex < grafo.getSize(); vertex++) {
+            int size = grafo.adjList.get(vertex).size();
+            sizeT += size;
+        }
+
+        return sizeT;
+    }
+
+    public static void writeGraph(Grafo grafo) throws IOException {
+        FileWriter file = new FileWriter("k2500.txt");
+        file.write(ReadGraph.numVertex + " " + getEdgesListSize(grafo) + "\n");
+
+        for(int vertex = 1; vertex <= ReadGraph.numVertex; vertex++) {
+            List<Integer> list = grafo.adjList.get(vertex);
+            Collections.sort(list);
+            int[] sucessores = grafo.adjList.get(vertex).stream().mapToInt(i->i).toArray();
+				int size = list.size();
+                for(int j = 0; j < size; j++) {
+                    file.write("    " + vertex + " " + sucessores[j] + "\n");
+                }
+        }
+
+        file.close();
     }
 }

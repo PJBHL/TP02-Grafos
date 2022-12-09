@@ -15,11 +15,13 @@ public class Main {
         // Leitura do arquivo, construção da lista de adjacência (por sucessores) e ordenação de cada lista.
         grafo = ReadGraph.readGraph(fileName);
         AdjList.ordenarSucessores(grafo);
-        AdjList.printList(grafo);
+        // AdjList.printList(grafo);
 
         // Leitura do vértice de origem e destino e procura de caminhos disjuntos.
         String origem = read.readLine();
         String destino = read.readLine();
         System.out.println("O número máximo de caminhos disjuntos é: " + DisjointPaths.findDisjointPath(grafo, Integer.parseInt(origem), Integer.parseInt(destino)));
+
+        // Grafo.writeGraph(grafo);
     }
 }
