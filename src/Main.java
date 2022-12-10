@@ -20,7 +20,11 @@ public class Main {
         // Leitura do vértice de origem e destino e procura de caminhos disjuntos.
         String origem = read.readLine();
         String destino = read.readLine();
+        long inicio = System.nanoTime();
         System.out.println("O número máximo de caminhos disjuntos é: " + DisjointPaths.findDisjointPath(grafo, Integer.parseInt(origem), Integer.parseInt(destino)));
+        long fim = System.nanoTime();
+        long tempoEmSegundos = (fim - inicio) / 1000000000;
+        System.out.println("Tempo de execucao: " + tempoEmSegundos);
 
         // Grafo.writeGraph(grafo);
     }
