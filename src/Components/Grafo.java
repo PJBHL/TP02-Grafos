@@ -64,7 +64,7 @@ public class Grafo {
     }
 
     public static void writeGraph(Grafo grafo) throws IOException {
-        FileWriter file = new FileWriter("k2500.txt");
+        FileWriter file = new FileWriter("cycle-2500.txt");
         file.write(ReadGraph.numVertex + " " + getEdgesListSize(grafo) + "\n");
 
         for(int vertex = 1; vertex <= ReadGraph.numVertex; vertex++) {
